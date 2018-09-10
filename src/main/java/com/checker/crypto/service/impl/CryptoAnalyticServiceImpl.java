@@ -49,9 +49,6 @@ public class CryptoAnalyticServiceImpl implements CryptoAnalyticService {
 		java_rest_coin_api api = new java_rest_coin_api(KEY);
 		Timedata[] result = api.ohlcv_get_latest_timeseries(symbolId,
 				api.period_identifier_from_string(minutes + "MIN"));
-		for (int i = 0; i < result.length; i++) {
-			System.out.println(result[i]);
-		}
 		ArrayList<Timedata> timedatas = new ArrayList<>(Arrays.asList(result));
 		return timedatas.stream().collect(Collectors.averagingDouble(Timedata::get_price_close));
 	}

@@ -37,7 +37,7 @@ public class CryptoPriceController {
 	 * (Exception e) { e.printStackTrace(); } return result; }
 	 */
 	@ApiOperation(value = "Get Average Prices")
-	@GetMapping("/getAveragePrices/minutes")
+	@GetMapping("/api/getAveragePrices/minutes")
 	public ResponseEntity<Response> getAveragePricesMinutes(
 			@ApiParam(value = "minutes", required = true) @RequestParam String minutes) {
 		ResponseEntity<Response> responseEntity = null;
@@ -57,7 +57,7 @@ public class CryptoPriceController {
 	}
 
 	@ApiOperation(value = "Get MedianPrices")
-	@GetMapping("/getMedianPrices/minutes")
+	@GetMapping("/api/getMedianPrices/minutes")
 	public ResponseEntity<Response> getMedianPricesMinutes(
 			@ApiParam(value = "minutes", required = true) @RequestParam String minutes) {
 		ResponseEntity<Response> responseEntity = null;
